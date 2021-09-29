@@ -80,7 +80,8 @@ import com.google.firebase.auth.FirebaseAuth;
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                        progressBar.setVisibility(View.GONE);
                     }else{
                         Toast.makeText(MainActivity.this,"Invalid credentials!!",Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
