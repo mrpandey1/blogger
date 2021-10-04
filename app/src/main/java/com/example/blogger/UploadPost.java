@@ -45,12 +45,17 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -124,7 +129,8 @@ public class UploadPost extends Fragment {
     StorageReference storageReference;
     private LocationManager locationManager;
     private LocationListener locationListener;
-
+    private FirebaseUser user2;
+    private DatabaseReference reference2;
     Geocoder geocoder;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -133,6 +139,8 @@ public class UploadPost extends Fragment {
         uploadPost = view.findViewById(R.id.uploadPost);
         location = view.findViewById(R.id.postLocation);
         name = view.findViewById(R.id.postName);
+
+
         title = view.findViewById(R.id.postTitle);
         description = view.findViewById(R.id.postDescription);
         mAuth = FirebaseAuth.getInstance();
@@ -141,6 +149,7 @@ public class UploadPost extends Fragment {
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
         userID = user.getUid();
+
         locationManager = (LocationManager) getActivity().getSystemService(LOCATION_SERVICE);
         geocoder= new Geocoder(getContext(), Locale.getDefault());
         locationListener = new LocationListener() {
@@ -181,6 +190,27 @@ public class UploadPost extends Fragment {
             @Override
             public void onClick(View view) {
                 uploadBlog();
+            }
+        });
+
+        user2 = FirebaseAuth.getInstance().getCurrentUser();
+        reference2= FirebaseDatabase.getInstance().getReference("Users");
+        userID=user2.getUid();
+
+        reference2.child(userID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                User userProfile=snapshot.getValue(User.class);
+                if(userProfile!=null){
+                    String userName=userProfile.name;
+                    name.setText(userName);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 
@@ -351,6 +381,8 @@ public class UploadPost extends Fragment {
 
         }
     }
+
+
     private ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
