@@ -7,6 +7,7 @@
         <entry key="..\:/Users/mrpan/AndroidStudioProjects/Blogger/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/mrpan/AndroidStudioProjects/Blogger/app/src/main/res/layout/activity_profile.xml" value="0.19746376811594202" />
         <entry key="..\:/Users/mrpan/AndroidStudioProjects/Blogger/app/src/main/res/layout/activity_register_user.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/activity_about_post.xml" value="0.22" />
         <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/activity_forgot_password.xml" value="0.25" />
         <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/activity_home_page.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
@@ -15,6 +16,8 @@
         <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/fragment_home_page.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/fragment_profile__page.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/fragment_time_line.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/fragment_upload_post.xml" value="0.25" />
+        <entry key="..\:/Users/nishant/AndroidStudioProjects/blogger/app/src/main/res/layout/item.xml" value="0.22" />
       </map>
     </option>
   </component>
@@ -23,5 +26,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.20416666666666666" />
+      </ProjectState>
+    </option>
   </component>
 </project>

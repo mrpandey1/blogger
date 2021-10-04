@@ -18,6 +18,8 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
         switch (position){
             case 1:
+                return new UploadPost();
+            case 2:
                 return new Profile_Page();
         }
         return new TimeLine();
@@ -25,6 +27,6 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

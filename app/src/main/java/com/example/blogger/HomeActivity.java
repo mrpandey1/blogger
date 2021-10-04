@@ -24,8 +24,9 @@ public class HomeActivity extends AppCompatActivity {
         adapter = new FragmentAdapter(fm, getLifecycle());
         pager2.setAdapter(adapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText("First"));
-        tabLayout.addTab(tabLayout.newTab().setText("Second"));
+        tabLayout.addTab(tabLayout.newTab().setText("Trending"));
+        tabLayout.addTab(tabLayout.newTab().setText("Upload"));
+        tabLayout.addTab(tabLayout.newTab().setText("Profile"));
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
